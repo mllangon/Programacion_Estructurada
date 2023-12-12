@@ -7,22 +7,16 @@ struct Estudiante {
     float promedio;
 };
 
-void imprimirEstudiantePorValor(Estudiante estudiante) {
-    std::cout << "Nombre: " << estudiante.nombre << std::endl;
-    std::cout << "Edad: " << estudiante.edad << std::endl;
-    std::cout << "Promedio: " << estudiante.promedio << std::endl;
+void imprimirEstudiante(Estudiante est) {
+    std::cout << "Nombre: " << est.nombre << ", Edad: " << est.edad << ", Promedio: " << est.promedio << std::endl;
 }
 
-void imprimirEstudiantePorReferencia(const Estudiante& estudiante) {
-    std::cout << "Nombre: " << estudiante.nombre << std::endl;
-    std::cout << "Edad: " << estudiante.edad << std::endl;
-    std::cout << "Promedio: " << estudiante.promedio << std::endl;
+void modificarEstudiante(Estudiante* est) {
+    est->edad = 30;
 }
 
-void imprimirEstudiantePorDireccion(const Estudiante* estudiante) {
-    std::cout << "Nombre: " << estudiante->nombre << std::endl;
-    std::cout << "Edad: " << estudiante->edad << std::endl;
-    std::cout << "Promedio: " << estudiante->promedio << std::endl;
+void imprimirEstudiante2(const Estudiante* est) {
+    std::cout << "Nombre: " << est->nombre << ", Edad: " << est->edad << ", Promedio: " << est->promedio << std::endl;
 }
 
 int main() {
@@ -31,9 +25,9 @@ int main() {
     estudiante1.edad = 20;
     estudiante1.promedio = 8.5;
 
-    imprimirEstudiantePorValor(estudiante1);
-    imprimirEstudiantePorReferencia(estudiante1);
-    imprimirEstudiantePorDireccion(&estudiante1);
+    imprimirEstudiante(estudiante1);
+    modificarEstudiante(&estudiante1);
+    imprimirEstudiante2(&estudiante1);
 
     return 0;
 }
