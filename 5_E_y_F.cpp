@@ -25,3 +25,15 @@ void imprimirEstudiantePorDireccion(const Estudiante* estudiante) {
     std::cout << "Promedio: " << estudiante->promedio << std::endl;
 }
 
+int main() {
+    Estudiante estudiante1;
+    strcpy(estudiante1.nombre, "Juan");
+    estudiante1.edad = 20;
+    estudiante1.promedio = 8.5;
+
+    imprimirEstudiantePorValor(estudiante1);
+    imprimirEstudiantePorReferencia(estudiante1);
+    imprimirEstudiantePorDireccion(&estudiante1);
+
+    return 0;
+}
